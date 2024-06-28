@@ -1,8 +1,12 @@
 # AdaBoost-Classifier-for-Heart-Disease-Prediction
 Report: AdaBoost Classifier for Heart Disease Prediction(First section)
+
+
 Objective:
 The objective of the code is to implement an AdaBoost classifier for predicting heart disease based on a 
 given dataset. The code covers data loading, preprocessing, model training, prediction, and evaluation.
+
+
 Key Steps:
 Data Loading:
 The code uses the Pandas library to load a dataset ('heart_disease_uci.csv') into a DataFrame.
@@ -10,6 +14,8 @@ Dataset Exploration:
 Column names of the dataset are printed to understand the available features.
 Target Variable Selection:
 The target variable ('num') is chosen based on the column names, ensuring it exists in the dataset.
+
+
 Data Splitting:
 The dataset is split into training and testing sets (80% training, 20% testing) using the train_test_split 
 function.
@@ -19,6 +25,8 @@ Transformers for imputing missing values in numeric columns and one-hot encoding
 are created.
 Transformers are combined into a preprocessor using ColumnTransformer.
 The preprocessor is applied to impute missing values in both the training and testing sets.
+
+
 Model Definition:
 A Decision Tree classifier is chosen as the base model for AdaBoost.
 AdaBoost Classifier:
@@ -26,18 +34,24 @@ An AdaBoost classifier is defined using the previously chosen Decision Tree as t
 The number of estimators is set to 50, and a random state is specified for reproducibility.
 Model Training:
 The AdaBoost model is trained on the preprocessed training data.
+
+
 Prediction:
 The trained model is used to make predictions on the preprocessed testing data.
 Model Evaluation:
 Performance metrics such as accuracy, precision, recall, and F1 score are calculated using scikit-learn's 
 metrics functions.
 The evaluation metrics are printed to assess the model's performance.
+
+
 Conclusion:
 The code successfully implements an AdaBoost classifier for heart disease prediction. The model is 
 trained on a preprocessed dataset, and its performance is evaluated using standard classification 
 metrics. This code provides a comprehensive workflow for building and assessing a machine learning 
 model for heart disease prediction.
 Stacking Ensemble Report(Second Section)
+
+
 Objective:
 The objective of this report is to implement and evaluate the Stacking ensemble method using three 
 base models (Support Vector Machine, Decision Tree, and Gradient Boosting) on a dataset related to 
@@ -53,11 +67,15 @@ The target variable 'num' is transformed to binary form (0 or 1).
 Data Splitting:
 The dataset is split into features (X) and the target variable (y).
 The data is further divided into training and testing sets.
+
+
 Base Models:
 Three base models are chosen:
 Support Vector Machine (SVM)
 Decision Tree
 Gradient Boosting
+
+
 Stacking Classifier:
 A Stacking Classifier is created with the specified base models.
 AdaBoostClassifier is used as the final estimator.
@@ -67,6 +85,8 @@ Cross-validation scores are printed to assess model performance.
 Model Training and Testing:
 The stacking model is trained on the entire training set.
 Predictions are made on the test set.
+
+
 Performance Evaluation:
 The accuracy of the stacking model is calculated using the accuracy_score function.
 The accuracy is printed for the evaluation of the stacking model on the test set.
@@ -74,12 +94,16 @@ Results:
 Cross-validation is performed with varying folds (k = 3, 5, 7) to assess the generalization performance of 
 the stacking model.
 The final accuracy of the stacking model on the test set is reported.
+
+
 Recommendations:
 The stacking ensemble method shows promise in improving predictive performance by leveraging 
 diverse base models.
 Further tuning of hyperparameters and experimentation with additional base models could potentially 
 enhance the model's performance
 Explain the Stacking method in the field of machine learning
+
+
 Stacking Method in Machine Learning:
 Overview:
 Stacking, short for stacked generalization, is an ensemble learning technique that combines multiple 
@@ -87,12 +111,16 @@ diverse base models to improve predictive performance. It introduces a meta-mode
 model) that takes as input the predictions of the base models and produces a final prediction. The idea is 
 to leverage the strengths of different models, capturing various aspects of the underlying data patterns, 
 and potentially achieving better generalization than individual models.
+
+
 Key Components:
 Base Models:
 Stacking involves training multiple base models on the same dataset. These models can be of different 
 types or can be the same algorithm with different hyperparameters.
 The diversity in base models is crucial as it allows capturing different perspectives on the data and helps 
 in reducing overfitting.
+
+
 Meta-Model (Final Estimator):
 A meta-model, often referred to as the final estimator, is trained to make predictions based on the 
 outputs of the base models.
@@ -102,6 +130,8 @@ Training Process:
 The training process typically involves two stages. In the first stage, the base models are trained on the 
 input data. In the second stage, the meta-model is trained using the predictions made by the base 
 models.
+
+
 The training dataset is often split into multiple subsets, and the base models are trained on different 
 subsets to introduce variability.
 Prediction Process:
@@ -109,6 +139,8 @@ During the prediction phase, the input data is passed through each of the traine
 individual predictions are collected.
 These individual predictions are then used as input features for the meta-model, which produces the 
 final prediction.
+
+
 Advantages:
 Improved Predictive Performance:
 Stacking aims to combine the strengths of different models, mitigating the weaknesses of individual 
